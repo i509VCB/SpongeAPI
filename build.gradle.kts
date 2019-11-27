@@ -5,8 +5,6 @@ plugins {
     id("org.spongepowered.gradle.sponge.deploy")
     id("org.spongepowered.gradle.sort")
     id("org.spongepowered.event-impl-gen") version "5.7.0"
-
-    checkstyle
 }
 
 base {
@@ -86,17 +84,6 @@ dependencies {
     implementation("org.ow2.asm:asm:6.2")
 }
 
-// Disable checkstyle by default (won't run unless 'checkstyle' is explicitly invoked)
-val checkstyleTask = task("checkstyle") {
-    setDependsOn(tasks.withType<Checkstyle>())
-}
-
-gradle.taskGraph.whenReady {
-    if (checkstyleTask !in allTasks) {
-        tasks.withType<Checkstyle>().forEach { task -> task.enabled = false }
-    }
-}
-
 tasks {
     genEventImpl {
         outputFactory = "org.spongepowered.api.event.SpongeEventFactory"
@@ -127,16 +114,6 @@ tasks {
 
     artifacts {
         archives(shadowJar)
-    }
-
-    checkstyle {
-        toolVersion = "8.7"
-        configFile = file("checkstyle.xml")
-        configProperties = mapOf(
-                "basedir" to projectDir,
-                "suppressions" to file("checkstyle-suppressions.xml"),
-                "severity" to "warning"
-        )
     }
 }
 
