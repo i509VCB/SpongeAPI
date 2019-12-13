@@ -137,7 +137,7 @@ public interface BlockEntityArchetype extends Archetype<BlockSnapshot, BlockEnti
          * and potentially any Sponge-added tracking information, such as owner
          * or notifier.
          *
-         * <p>Note that this overwrites data set from the following methods:
+         * <p>Note that this overwrites data set from the following methods:</p>
          * <ul>
          *     <li>{@link #from(Location)}</li>
          *     <li>{@link #state(BlockState)}</li>
@@ -146,7 +146,8 @@ public interface BlockEntityArchetype extends Archetype<BlockSnapshot, BlockEnti
          *     <li>{@link #add(Value)}</li>
          *     <li>{@link #add(Key, Object)}</li>
          *     <li>{@link #add(DataManipulator)}</li>
-         * </ul></p>
+         * </ul>
+         *
          * @param blockEntity The block entity to absorb all data
          * @return This builder, for chaining
          */
