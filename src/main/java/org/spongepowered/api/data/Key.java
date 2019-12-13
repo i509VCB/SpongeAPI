@@ -249,10 +249,10 @@ public interface Key<V extends Value<?>> extends CatalogType {
              *
              * <p>Setting the maximum value is required.</p>
              *
-             * @param minValue The minimum value
+             * @param maxValue The maximum value
              * @return This builder, for chaining
              */
-            BoundedBuilder<E, V> maxValue(E minValue);
+            BoundedBuilder<E, V> maxValue(E maxValue);
 
             /**
              * Sets the default maximum element supplier.
