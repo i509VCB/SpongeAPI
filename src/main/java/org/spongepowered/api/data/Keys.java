@@ -334,13 +334,13 @@ public final class Keys {
     public static final Key<Value<Boolean>> ARMOR_STAND_IS_SMALL = DummyObjectProvider.createExtendedFor(Key.class, "ARMOR_STAND_IS_SMALL");
 
     /**
-     * Represents the {@link Key} for if an {@link ArmorStand} if a "marker" stand.
+     * Represents the {@link Key} for if an {@link ArmorStand} is a "marker" stand.
      *
      * <p>If {@code true}, the armor stand's bounding box is near
      * impossible to see, and the armor stand can no longer be
      * interacted with.</p>
      */
-    public static final Key<Value<Boolean>> ARMOR_STAND_MARKER = DummyObjectProvider.createExtendedFor(Key.class, "ARMOR_STAND_MARKER");
+    public static final Key<Value<Boolean>> ARMOR_STAND_HAS_MARKER = DummyObjectProvider.createExtendedFor(Key.class, "ARMOR_STAND_MARKER");
 
     /**
      * Represents the {@link Key} for whether players are prevented from taking

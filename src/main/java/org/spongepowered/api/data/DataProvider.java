@@ -102,13 +102,13 @@ public interface DataProvider<V extends Value<E>, E> {
      */
     boolean isSupported(DataHolder dataHolder);
 
-    DataTransactionResult offer(DataHolder.Mutable container, E element);
+    DataTransactionResult offer(DataHolder.Mutable dataHolder, E element);
 
-    default DataTransactionResult offerValue(DataHolder.Mutable container, V value) {
-        return this.offer(container, value.get());
+    default DataTransactionResult offerValue(DataHolder.Mutable dataHolder, V value) {
+        return this.offer(dataHolder, value.get());
     }
 
-    DataTransactionResult remove(DataHolder.Mutable container);
+    DataTransactionResult remove(DataHolder.Mutable dataHolder);
 
     <I extends DataHolder.Immutable<I>> Optional<I> with(I immutable, E element);
 
