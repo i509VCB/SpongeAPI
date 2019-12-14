@@ -77,7 +77,9 @@ public interface ValueContainer {
      * @param key The key to retrieve the value for
      * @return The value, if available
      */
-    OptionalInt getInt(Key<? extends Value<Integer>> key);
+    default OptionalInt getInt(Key<? extends Value<Integer>> key) {
+        return this.get(key).map(OptionalInt::of).orElse(OptionalInt.empty());
+    }
 
     /**
      * Attempts to get the underlying double value backed by a {@link Value}
@@ -89,7 +91,9 @@ public interface ValueContainer {
      * @param key The key to retrieve the value for
      * @return The value, if available
      */
-    OptionalDouble getDouble(Key<? extends Value<Double>> key);
+    default OptionalDouble getDouble(Key<? extends Value<Double>> key) {
+        return this.get(key).map(OptionalDouble::of).orElse(OptionalDouble.empty());
+    }
 
     /**
      * Attempts to get the underlying long value backed by a {@link Value}
@@ -101,7 +105,9 @@ public interface ValueContainer {
      * @param key The key to retrieve the value for
      * @return The value, if available
      */
-    OptionalLong getLong(Key<? extends Value<Long>> key);
+    default OptionalLong getLong(Key<? extends Value<Long>> key) {
+        return this.get(key).map(OptionalLong::of).orElse(OptionalLong.empty());
+    }
 
     /**
      * Attempts to get the underlying value backed by a {@link Value}
