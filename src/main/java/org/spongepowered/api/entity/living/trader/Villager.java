@@ -52,4 +52,12 @@ public interface Villager extends Trader, Ageable {
     default Value.Mutable<Profession> profession() {
         return getValue(Keys.PROFESSION).get().asMutable();
     }
+
+    /**
+     * {@link Keys#PROFESSION_LEVEL}
+     * @return The profession level of this villager
+     */
+    default Value.Mutable<Integer> professionLevel() {
+        return getValue(Keys.PROFESSION_LEVEL).get().asMutable();
+    }
 }

@@ -1798,6 +1798,11 @@ public final class Keys {
     public static final Key<Value<Profession>> PROFESSION = DummyObjectProvider.createExtendedFor(Key.class, "PROFESSION");
 
     /**
+     * Represents the {@link Key} for the {@link Villager}'s {@link Profession} level.
+     */
+    public static final Supplier<Key<Value<Integer>>> PROFESSION_LEVEL = Sponge.getRegistry().getCatalogRegistry().provideSupplier(Key.class, "PROFESSION_LEVEL");
+
+    /**
      * Represents the {@link Key} for the type of a {@link Rabbit}.
      */
     public static final Key<Value<RabbitType>> RABBIT_TYPE = DummyObjectProvider.createExtendedFor(Key.class, "RABBIT_TYPE");
